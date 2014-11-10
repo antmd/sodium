@@ -27,6 +27,7 @@
 #include <forward_list>
 #include <tuple>
 #endif
+#include <pthread/pthread.h>
 
 namespace sodium {
 

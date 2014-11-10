@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 2.8)
 
 project(sodium)
 
-
 set(SODIUM_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/sodium)
+
+find_package(Boost REQUIRED)
 
 file(GLOB_RECURSE
     SODIUM_INCLUDE_FILES
@@ -15,7 +16,7 @@ file(GLOB_RECURSE
     ${SODIUM_BASE_DIR}/*.cpp
 )
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${Boost_INCLUDE_DIR})
 
 set(ALL_SOURCES ${SODIUM_INCLUDE_FILES} ${SODIUM_SOURCE_FILES})
         
